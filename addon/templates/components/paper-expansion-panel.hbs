@@ -1,5 +1,5 @@
 {{yield (hash
-  collapsed=(component "paper-expansion-panel/collapsed" isOpen=isOpen onExpand=(action expand))
-  expanded=(component "paper-expansion-panel/expanded" isOpen=isOpen onClose=(action collapse))
+  collapsed=(component "paper-expansion-panel/collapsed" isExpanded=isExpanded onExpand=(action expand))
+  expanded=(component "paper-expansion-panel/expanded" isExpanded=isExpanded onClose=(action collapse))
   collapse=(action collapse)
 )}}

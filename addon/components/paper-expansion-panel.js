@@ -6,15 +6,19 @@ export default Component.extend({
   layout,
   tagName: 'md-expansion-panel',
   attributeBindings: ['tabindex'],
-  classNameBindings: ['isOpen:md-open:md-close'],
+  classNameBindings: ['isExpanded:md-open:md-close'],
   tabindex: 0,
 
+  shouldRegister: false,
+
   expand() {
-    this.set('isOpen', true);
+    this.set('isExpanded', true);
+    this.sendAction('onExpandedChange', true);
   },
 
   collapse() {
-    this.set('isOpen', false);
+    this.set('isExpanded', false);
+    this.sendAction('onExpandedChange', false);
   },
 
   keyDown(ev) {

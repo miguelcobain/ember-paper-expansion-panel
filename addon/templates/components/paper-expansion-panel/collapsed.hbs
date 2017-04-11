@@ -1,4 +1,4 @@
-{{#unless isOpen}}
+{{#unless isExpanded}}
   <md-expansion-panel-collapsed onclick={{action onExpand}} onmouseenter={{action onMouseEnter}} onmouseleave={{action onMouseLeave}}>
     {{yield (hash
       isHovered=isHoveredOrOpen
