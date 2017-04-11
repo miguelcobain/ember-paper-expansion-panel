@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-paper-expandable-card'
+  name: 'ember-paper-expansion-panels'
 };

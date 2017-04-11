@@ -1,5 +1,61 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<h1>ember-paper-expansion-panels</h1>
 
-{{outlet}}
+{{#each items as |item|}}
+
+  {{#paper-expansion-panel as |panel|}}
+    {{#panel.collapsed as |collapsed|}}
+      <div class="md-title">Title {{item}}</div>
+      <div class="md-summary">Summary</div>
+
+      {{#if collapsed.isHovered}}
+        <div>
+          {{#paper-button iconButton=true onClick=(action "alert" "time")}}
+            {{paper-icon "access-time"}}
+          {{/paper-button}}
+
+          {{#collapsed.menu position="right target" as |menu|}}
+            {{#menu.trigger}}
+              {{#paper-button iconButton=true}}
+                {{paper-icon "more-vert"}}
+              {{/paper-button}}
+            {{/menu.trigger}}
+            {{#menu.content as |content|}}
+              {{#content.menu-item onClick=(action "alert")}}
+                {{paper-icon "phone"}} <span>Action 1</span>
+              {{/content.menu-item}}
+              {{#content.menu-item onClick=(action "alert")}}
+                {{paper-icon "phone"}} <span>Action 2</span>
+              {{/content.menu-item}}
+              {{#content.menu-item onClick=(action "alert")}}
+                {{paper-icon "phone"}} <span>Action 3</span>
+              {{/content.menu-item}}
+            {{/menu.content}}
+          {{/collapsed.menu}}
+        </div>
+      {{/if}}
+    {{/panel.collapsed}}
+
+    {{#panel.expanded as |expanded|}}
+      {{#expanded.header}}
+        <div class="md-title">Expanded title</div>
+        <div class="md-summary">Expanded summary</div>
+      {{/expanded.header}}
+
+      {{#expanded.content}}
+        Content
+      {{/expanded.content}}
+
+      {{#expanded.footer}}
+        <span class="flex"></span>
+        {{#paper-button onClick=(action panel.collapse)}}
+          Cancel
+        {{/paper-button}}
+        {{#paper-button primary=true onClick=(action panel.collapse)}}
+          Save
+        {{/paper-button}}
+      {{/expanded.footer}}
+
+    {{/panel.expanded}}
+  {{/paper-expansion-panel}}
+
+{{/each}}
