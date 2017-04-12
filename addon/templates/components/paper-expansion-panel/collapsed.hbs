@@ -1,8 +1,8 @@
-{{#unless isExpanded}}
-  <md-expansion-panel-collapsed onclick={{action onExpand}} onmouseenter={{action onMouseEnter}} onmouseleave={{action onMouseLeave}}>
+{{#unless expanded}}
+  {{#paper-item class=class onClick=(action onExpand) onMouseEnter=(action onMouseEnter) onMouseLeave=(action onMouseLeave)}}
     {{yield (hash
       isHovered=isHoveredOrOpen
       menu=(component "paper-menu" onOpen=(action (mut menuOpen) true) onClose=(action onClose))
     )}}
-  </md-expansion-panel-collapsed>
+  {{/paper-item}}
 {{/unless}}

@@ -4,9 +4,5 @@ const { Component } = Ember;
 
 export default Component.extend({
   layout,
-  tagName: 'md-expansion-panel-header',
-
-  click() {
-    this.sendAction('onClose');
-  }
+  tagName: ''
 });

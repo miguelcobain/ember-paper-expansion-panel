@@ -5,19 +5,17 @@ const { Component } = Ember;
 export default Component.extend({
   layout,
   tagName: 'md-expansion-panel',
-  attributeBindings: ['tabindex'],
-  classNameBindings: ['isExpanded:md-open:md-close'],
-  tabindex: 0,
+  classNameBindings: ['expanded:md-open:md-close'],
 
   shouldRegister: false,
 
   expand() {
-    this.set('isExpanded', true);
+    this.set('expanded', true);
     this.sendAction('onExpandedChange', true);
   },
 
   collapse() {
-    this.set('isExpanded', false);
+    this.set('expanded', false);
     this.sendAction('onExpandedChange', false);
   },
 
