@@ -1,11 +1,11 @@
-# ember-paper-expansion-panels
+# ember-paper-expansion-panel
 
 This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `cd ember-paper-expansion-panels`
+* `cd ember-paper-expansion-panel`
 * `npm install`
 * `bower install`
 

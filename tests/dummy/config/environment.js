@@ -44,7 +44,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.locationType = 'hash';
-    ENV.rootURL = '/ember-paper-expansion-panels/';
+    ENV.rootURL = '/ember-paper-expansion-panel/';
 
   }
 

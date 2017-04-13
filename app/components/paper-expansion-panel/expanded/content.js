@@ -1,1 +1,1 @@
-export { default } from 'ember-paper-expansion-panels/components/paper-expansion-panel/expanded/content';
+export { default } from 'ember-paper-expansion-panel/components/paper-expansion-panel/expanded/content';

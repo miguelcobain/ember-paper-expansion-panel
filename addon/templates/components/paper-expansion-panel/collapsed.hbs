@@ -1,5 +1,7 @@
 {{#unless expanded}}
-  {{#paper-item class=class onClick=(action onExpand) onMouseEnter=(action onMouseEnter) onMouseLeave=(action onMouseLeave) as |controls|}}
+  {{#paper-item class=class onClick=(action onExpand)
+    onMouseEnter=onMouseEnter
+    onMouseLeave=onMouseLeave as |controls|}}
     {{yield controls}}
   {{/paper-item}}
 {{/unless}}
