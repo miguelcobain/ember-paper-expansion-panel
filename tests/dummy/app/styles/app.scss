@@ -5,3 +5,15 @@ body {
   background: #F6F7FC;
   padding: 80px;
 }
+
+.md-subheader {
+  background-color: transparent;
+}
+
+md-expansion-panel .actions {
+  display: flex;
+
+  .md-button {
+    margin: 0;
+  }
+}

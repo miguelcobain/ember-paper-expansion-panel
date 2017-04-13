@@ -1,8 +1,5 @@
 {{#unless expanded}}
-  {{#paper-item class=class onClick=(action onExpand) onMouseEnter=(action onMouseEnter) onMouseLeave=(action onMouseLeave)}}
-    {{yield (hash
-      isHovered=isHoveredOrOpen
-      menu=(component "paper-menu" onOpen=(action (mut menuOpen) true) onClose=(action onClose))
-    )}}
+  {{#paper-item class=class onClick=(action onExpand) onMouseEnter=(action onMouseEnter) onMouseLeave=(action onMouseLeave) as |controls|}}
+    {{yield controls}}
   {{/paper-item}}
 {{/unless}}
