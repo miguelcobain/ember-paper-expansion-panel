@@ -64,6 +64,7 @@ Don't forget to import your styles in your `app.scss` **after** importing ember 
 - `onExpandedChange` - an action that is sent when a the panel is expanded or collapsed. You get as an argument a boolean with the current state of `expanded`
 
 This component yields a hash that contains the `collapsed` and `expanded` components.
+It also yields a `collapse` action you can use to collapse the panel (e.g use it with paper-button's onClick).
 
 ### `{{#panel.collapsed}}`
 
