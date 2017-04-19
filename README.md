@@ -1,4 +1,4 @@
-# ember-paper-expansion-panel [![Ember Observer Score](http://emberobserver.com/badges/ember-paper-expansion-panel.svg)](http://emberobserver.com/addons/ember-paper-expansion-panel)
+# ember-paper-expansion-panel [![Build Status](https://travis-ci.org/miguelcobain/ember-paper-expansion-panel.svg?branch=master)](https://travis-ci.org/miguelcobain/ember-paper-expansion-panel) [![Ember Observer Score](http://emberobserver.com/badges/ember-paper-expansion-panel.svg)](http://emberobserver.com/addons/ember-paper-expansion-panel)
 
 This is an [ember-paper](https://github.com/miguelcobain/ember-paper) addon that provides an implementation of [material expansion panels](https://material.io/guidelines/components/expansion-panels.html).
 
