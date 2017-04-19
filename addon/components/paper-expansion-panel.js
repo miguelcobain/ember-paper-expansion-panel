@@ -7,7 +7,7 @@ export default Component.extend({
   tagName: 'md-expansion-panel',
   classNameBindings: ['expanded:md-open:md-close'],
 
-  shouldRegister: false,
+  expanded: false,
 
   expand() {
     this.set('expanded', true);
