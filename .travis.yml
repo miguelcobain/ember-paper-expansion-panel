@@ -1,9 +1,15 @@
 ---
 language: node_js
 node_js:
-  - "6"
+  - "7"
 
+dist: trusty
 sudo: false
+
+addons:
+  apt:
+    packages:
+     - google-chrome-stable
 
 cache:
   directories:
@@ -33,6 +39,11 @@ before_install:
 install:
   - npm install
   - bower install
+
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
 
 script:
   # Usually, it's ok to finish the test scenario without reverting
