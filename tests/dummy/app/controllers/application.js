@@ -7,8 +7,8 @@ export default Controller.extend({
   ],
 
   actions: {
-    alert(ev, s = 'Hey!') {
-      alert(s);
+    alert() {
+      this.set('dialogOpen', true);
     }
   }
 });

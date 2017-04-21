@@ -108,3 +108,17 @@
   {{/each}}
 
 {{/paper-list}}
+
+{{#if dialogOpen}}
+  {{#paper-dialog onClose=(action (mut dialogOpen) false)}}
+    {{#paper-dialog-content}}
+      <h2 class="md-title">Action</h2>
+      <p>This is an example action.</p>
+    {{/paper-dialog-content}}
+
+    {{#paper-dialog-actions class="layout-row"}}
+      <span class="flex"></span>
+      {{#paper-button primary=true onClick=(action (mut dialogOpen) false)}}OK{{/paper-button}}
+    {{/paper-dialog-actions}}
+  {{/paper-dialog}}
+{{/if}}

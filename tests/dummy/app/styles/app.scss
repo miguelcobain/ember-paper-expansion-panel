@@ -4,6 +4,10 @@
 body {
   background: #F6F7FC;
   padding: 80px;
+
+  @media screen and (max-width: 600px) {
+    padding: 20px;
+  }
 }
 
 .md-subheader {
