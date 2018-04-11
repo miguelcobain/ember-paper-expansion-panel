@@ -1,6 +1,6 @@
 {
   "name": "ember-paper-expansion-panel",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Material expansion panels for ember-paper.",
   "keywords": [
     "ember-addon",
