@@ -1,10 +1,9 @@
-import Ember from 'ember';
-const { Controller } = Ember;
+import Controller from '@ember/controller';
 
 export default Controller.extend({
-  items: [
+  items: Object.freeze([
     1, 2, 3, 4, 5
-  ],
+  ]),
 
   actions: {
     alert() {

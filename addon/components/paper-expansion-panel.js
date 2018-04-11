@@ -1,6 +1,5 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/paper-expansion-panel';
-const { Component } = Ember;
 
 export default Component.extend({
   layout,
@@ -11,12 +10,16 @@ export default Component.extend({
 
   expand() {
     this.set('expanded', true);
-    this.sendAction('onExpandedChange', true);
+    if (this.get('onExpandedChange')) {
+      this.get('onExpandedChange')(true);
+    }
   },
 
   collapse() {
     this.set('expanded', false);
-    this.sendAction('onExpandedChange', false);
+    if (this.get('onExpandedChange')) {
+      this.get('onExpandedChange')(false);
+    }
   },
 
   keyDown(ev) {
