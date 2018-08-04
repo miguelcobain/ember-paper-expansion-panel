@@ -61,7 +61,7 @@ Don't forget to import your styles in your `app.scss` **after** importing ember 
 ### `{{#paper-expansion-panel as |panel|}}`
 
 - `expanded` - defaults to `false` - this toggles the expansion panel between expanded and collapsed modes.
-- `onExpandedChange` - an action that is sent when a the panel is expanded or collapsed. You get as an argument a boolean with the current state of `expanded`
+- `onExpandedChange` - an action that is sent when a the panel is expanded or collapsed. You get two arguments, a boolean with the current state of `expanded` and the event object
 
 This component yields a hash that contains:
 - `collapsed` and `expanded` components
