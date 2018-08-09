@@ -8,17 +8,17 @@ export default Component.extend({
 
   expanded: false,
 
-  expand() {
+  expand(event) {
     this.set('expanded', true);
     if (this.get('onExpandedChange')) {
-      this.get('onExpandedChange')(true);
+      this.get('onExpandedChange')(true, event);
     }
   },
 
-  collapse() {
+  collapse(event) {
     this.set('expanded', false);
     if (this.get('onExpandedChange')) {
-      this.get('onExpandedChange')(false);
+      this.get('onExpandedChange')(false, event);
     }
   },
 
