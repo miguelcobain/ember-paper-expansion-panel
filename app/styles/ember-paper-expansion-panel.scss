@@ -16,7 +16,7 @@ md-expansion-panel {
     border-top-right-radius: 2px;
   }
 
-  // last panel only has top round corners
+  // last panel only has bottom round corners
   &:last-of-type {
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
