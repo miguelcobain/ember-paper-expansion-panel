@@ -109,6 +109,131 @@
 
 {{/paper-list}}
 
+{{#paper-list}}
+  {{#paper-subheader}}Customized example - Nested panel{{/paper-subheader}}
+  {{#paper-expansion-panel as |panel|}}
+    {{#panel.collapsed}}
+      <div class="md-panel-title">Title {{item}}</div>
+      <div class="md-panel-summary">Summary - Parent Panel</div>
+
+      <div class="actions">
+        {{#paper-button iconButton=true onClick=(action "alert" "time") bubbles=false}}
+          {{paper-icon "flash-on"}}
+        {{/paper-button}}
+
+        {{#paper-button iconButton=true onClick=(action "alert" "time") bubbles=false}}
+          {{paper-icon "access-time"}}
+        {{/paper-button}}
+
+        {{#paper-menu position="right target" as |menu|}}
+          {{#menu.trigger}}
+            {{#paper-button iconButton=true}}
+              {{paper-icon "more-vert"}}
+            {{/paper-button}}
+          {{/menu.trigger}}
+          {{#menu.content as |content|}}
+            {{#content.menu-item onClick=(action "alert")}}
+              {{paper-icon "phone"}} <span>Action 1</span>
+            {{/content.menu-item}}
+            {{#content.menu-item onClick=(action "alert")}}
+              {{paper-icon "phone"}} <span>Action 2</span>
+            {{/content.menu-item}}
+            {{#content.menu-item onClick=(action "alert")}}
+              {{paper-icon "phone"}} <span>Action 3</span>
+            {{/content.menu-item}}
+          {{/menu.content}}
+        {{/paper-menu}}
+
+        {{paper-icon "keyboard_arrow_down"}}
+      </div>
+    {{/panel.collapsed}}
+
+    {{#panel.expanded as |expanded|}}
+      {{#expanded.header}}
+        <div class="md-panel-title">Expanded title</div>
+        <div class="md-panel-summary">Expanded summary</div>
+
+        {{paper-icon "keyboard_arrow_up"}}
+      {{/expanded.header}}
+
+      {{#expanded.content}}
+        {{#paper-expansion-panel as |panel|}}
+          {{#panel.collapsed}}
+            <div class="md-panel-title">Title {{item}}</div>
+            <div class="md-panel-summary">Summary - Child Panel</div>
+
+            <div class="actions">
+              {{#paper-button iconButton=true onClick=(action "alert" "time") bubbles=false}}
+                {{paper-icon "flash-on"}}
+              {{/paper-button}}
+
+              {{#paper-button iconButton=true onClick=(action "alert" "time") bubbles=false}}
+                {{paper-icon "access-time"}}
+              {{/paper-button}}
+
+              {{#paper-menu position="right target" as |menu|}}
+                {{#menu.trigger}}
+                  {{#paper-button iconButton=true}}
+                    {{paper-icon "more-vert"}}
+                  {{/paper-button}}
+                {{/menu.trigger}}
+                {{#menu.content as |content|}}
+                  {{#content.menu-item onClick=(action "alert")}}
+                    {{paper-icon "phone"}} <span>Action 1</span>
+                  {{/content.menu-item}}
+                  {{#content.menu-item onClick=(action "alert")}}
+                    {{paper-icon "phone"}} <span>Action 2</span>
+                  {{/content.menu-item}}
+                  {{#content.menu-item onClick=(action "alert")}}
+                    {{paper-icon "phone"}} <span>Action 3</span>
+                  {{/content.menu-item}}
+                {{/menu.content}}
+              {{/paper-menu}}
+
+              {{paper-icon "keyboard_arrow_down"}}
+            </div>
+          {{/panel.collapsed}}
+
+          {{#panel.expanded as |expanded|}}
+            {{#expanded.header}}
+              <div class="md-panel-title">Expanded title</div>
+              <div class="md-panel-summary">Expanded summary</div>
+
+              {{paper-icon "keyboard_arrow_up"}}
+            {{/expanded.header}}
+
+            {{#expanded.content}}
+              Content
+            {{/expanded.content}}
+
+            {{#expanded.footer}}
+              <span class="flex"></span>
+              {{#paper-button onClick=(action panel.collapse)}}
+                Cancel
+              {{/paper-button}}
+              {{#paper-button primary=true onClick=(action panel.collapse)}}
+                Save
+              {{/paper-button}}
+            {{/expanded.footer}}
+
+          {{/panel.expanded}}
+        {{/paper-expansion-panel}}
+      {{/expanded.content}}
+
+      {{#expanded.footer}}
+        <span class="flex"></span>
+        {{#paper-button onClick=(action panel.collapse)}}
+          Cancel
+        {{/paper-button}}
+        {{#paper-button primary=true onClick=(action panel.collapse)}}
+          Save
+        {{/paper-button}}
+      {{/expanded.footer}}
+
+    {{/panel.expanded}}
+  {{/paper-expansion-panel}}
+{{/paper-list}}
+
 {{#if dialogOpen}}
   {{#paper-dialog onClose=(action (mut dialogOpen) false)}}
     {{#paper-dialog-content}}
