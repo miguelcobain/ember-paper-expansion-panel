@@ -49,7 +49,7 @@ module('Integration | Component | paper expansion panel', function(hooks) {
 
     await click('button.md-button');
 
-    assert.equal(find('md-list-item').textContent.trim(), 'expanded header');
+    assert.equal(find('md-list-item').textContent.trim(), 'collapsed content');
     assert.equal(find('md-expansion-panel-content').textContent.trim(), 'expanded content');
     assert.equal(find('md-expansion-panel-footer').textContent.trim(), 'expanded footer');
   });
@@ -80,7 +80,7 @@ module('Integration | Component | paper expansion panel', function(hooks) {
       {{/paper-expansion-panel}}
     `);
 
-    assert.equal(find('md-list-item').textContent.trim(), 'expanded header');
+    assert.equal(find('md-list-item').textContent.trim(), 'collapsed content');
     assert.equal(find('md-expansion-panel-content').textContent.trim(), 'expanded content');
     assert.equal(find('md-expansion-panel-footer').textContent.trim(), 'expanded footer');
   });
@@ -115,7 +115,7 @@ module('Integration | Component | paper expansion panel', function(hooks) {
 
     this.set('expanded', true);
 
-    assert.equal(find('md-list-item').textContent.trim(), 'expanded header');
+    assert.equal(find('md-list-item').textContent.trim(), 'collapsed content');
     assert.equal(find('md-expansion-panel-content').textContent.trim(), 'expanded content');
     assert.equal(find('md-expansion-panel-footer').textContent.trim(), 'expanded footer');
   });
@@ -190,7 +190,7 @@ module('Integration | Component | paper expansion panel', function(hooks) {
     await click('button.md-button');
 
     this.set('onExpandedChange', (state) => {
-      assert.notOk(state, 'action was sent with false');
+      assert.ok(state, 'action was sent with true');
     });
 
     await click('button.md-button');

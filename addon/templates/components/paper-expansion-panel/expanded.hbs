@@ -1,7 +1,7 @@
-{{#if expanded}}
+<div class={{if expanded "" "hide"}}>
   {{yield (hash
     header=(component "paper-expansion-panel/expanded/header" onClose=onClose)
     content=(component "paper-expansion-panel/expanded/content")
     footer=(component "paper-expansion-panel/expanded/footer")
   )}}
-{{/if}}
+</div>

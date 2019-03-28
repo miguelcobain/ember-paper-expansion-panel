@@ -1,7 +1,7 @@
-{{#unless expanded}}
+<div class={{if expanded "hide" ""}}>
   {{#paper-item class=class onClick=(action onExpand)
     onMouseEnter=onMouseEnter
     onMouseLeave=onMouseLeave as |controls|}}
     {{yield controls}}
   {{/paper-item}}
-{{/unless}}
+</div>
