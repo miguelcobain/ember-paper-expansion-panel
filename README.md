@@ -7,36 +7,40 @@ This is an [ember-paper](https://github.com/miguelcobain/ember-paper) addon that
 An example usage:
 
 ```hbs
-{{#paper-expansion-panel as |panel|}}
-  {{#panel.collapsed}}
-    <div class="md-panel-title">Title {{item}}</div>
-    <div class="md-panel-summary">Summary</div>
-    {{paper-icon "keyboard_arrow_down"}}
-  {{/panel.collapsed}}
-
-  {{#panel.expanded as |expanded|}}
-    {{#expanded.header}}
-      <div class="md-panel-title">Expanded title</div>
-      <div class="md-panel-summary">Expanded summary</div>
-      {{paper-icon "keyboard_arrow_up"}}
-    {{/expanded.header}}
-
-    {{#expanded.content}}
+<PaperExpansionPanel as |Panel|>
+  <Panel.collapsed>
+    <div class="md-panel-title">
+      Title
+      {{@item}}
+    </div>
+    <div class="md-panel-summary">
+      Summary
+    </div>
+    <PaperIcon @icon="keyboard_arrow_down" />
+  </Panel.collapsed>
+  <Panel.expanded as |Expanded|>
+    <Expanded.header>
+      <div class="md-panel-title">
+        Expanded title
+      </div>
+      <div class="md-panel-summary">
+        Expanded summary
+      </div>
+      <PaperIcon @icon="keyboard_arrow_up" />
+    </Expanded.header>
+    <Expanded.content>
       Content
-    {{/expanded.content}}
-
-    {{#expanded.footer}}
-      <span class="flex"></span>
-      {{#paper-button onClick=(action panel.collapse)}}
+    </Expanded.content>
+    <Expanded.footer>
+      <PaperButton @onClick={{action Panel.collapse}}>
         Cancel
-      {{/paper-button}}
-      {{#paper-button primary=true onClick=(action panel.collapse)}}
+      </PaperButton>
+      <PaperButton @primary={{true}} @onClick={{action Panel.collapse}}>
         Save
-      {{/paper-button}}
-    {{/expanded.footer}}
-
-  {{/panel.expanded}}
-{{/paper-expansion-panel}}
+      </PaperButton>
+    </Expanded.footer>
+  </Panel.expanded>
+</PaperExpansionPanel>
 ```
 
 ## Demo
